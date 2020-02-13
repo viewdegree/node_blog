@@ -1,7 +1,7 @@
 /*
  * @Author: viewdegree
  * @Date: 2020-02-13 17:25:22
- * @LastEditTime : 2020-02-13 17:26:59
+ * @LastEditTime : 2020-02-13 20:14:04
  * @LastEditors  : Please set LastEditors
  * @Description: ajax
  * @FilePath: \node_blog\public\js\ajax.js
