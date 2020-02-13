@@ -1,0 +1,29 @@
+/*
+ * @Author: viewdegree
+ * @Date: 2020-02-13 12:41:12
+ * @LastEditTime : 2020-02-13 14:28:44
+ * @LastEditors  : Please set LastEditors
+ * @Description: 集成所有css的主文件
+ * @FilePath: \node_blog\views\css\view-ui.css
+ */
+
+
+/* css reset */
+
+@import './reset.css';
+
+/* 布局样式 */
+
+@import './layout.css';
+
+/* 表单样式 */
+
+@import './input.css';
+
+/* 按钮样式 */
+
+@import './btn.css';
+
+/* 编辑器样式 */
+
+@import './post.css';
