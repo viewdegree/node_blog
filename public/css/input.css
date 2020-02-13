@@ -1,0 +1,33 @@
+/* 表单的单行容器 */
+
+.form-item {
+    display: flex;
+    height: 2rem;
+    text-align: left;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+
+/* 表单标签 */
+
+.form-item>.form-label {
+    flex-basis: 20%;
+    font-size: 1rem;
+    color: #666;
+    padding: 2rem;
+}
+
+
+/* 输入框 */
+
+.form-item>.form-body {
+    flex: 1;
+}
+
+.form-item>.form-body>.form-input {
+    width: 100%;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #666;
+    text-align: center;
+}
