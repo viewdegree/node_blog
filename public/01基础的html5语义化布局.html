@@ -1,0 +1,280 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-23 17:07:07
+ * @LastEditTime: 2020-02-25 09:28:41
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \01.代码\chap2\01基础的html5语义化布局.html
+ -->
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>网页html5语义化布局</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+            }
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+            /* 整体布局边框 */
+            .g-hd{
+                border-bottom: 2px solid #000;
+            }
+            .g-mn{
+                float: left;
+                width: 65%;
+                min-height: 600px;
+                padding:1rem;
+            }
+            .g-mnc{
+                display: inline-block;
+                width:30%;
+                vertical-align: top;
+            }
+            .g-mnc+.g-mnc{
+                margin-left: 10px;
+            }
+            .g-sd{
+                float: right;
+                /* hot固定住 */
+                width: 25rem;
+                min-height: 600px;
+                padding: 3rem;
+            }
+            .g-slide{
+                clear: both;
+                background-color: rgb(245, 236, 236);
+                padding: 2rem;
+            }
+            .g-ft{
+                clear: both;
+                padding: 2rem;
+                color: #fff;
+                background-color: #000;
+                text-align: center;
+            }
+            /* 位置美化 */
+            .m-hd-tt{
+                display: inline-block;
+                width: calc(100% - 15rem);
+                padding-left: 2rem;
+            }
+            .m-hd-nav{
+                display: inline-block;
+            }
+            .m-hd-nav-lsitem{
+                float: left;
+                margin-left: 10px;
+            }
+            .m-mnc-bdc{
+                border: 1px solid #666;
+                padding: 1rem;
+                border-radius: 10px;
+                box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+            }
+            .u-mnc-tt{
+                color: rgb(0, 232, 113);
+            }
+            .u-mnc-bd{
+                padding-bottom: 1rem;
+            }
+            .u-mnc-bd-tt{
+                font-size: 1rem;
+            }
+            .u-mnc-bd-ct{
+                font-size: 1rem;
+                text-indent: 2rem;
+            }
+            .u-sd-hot_lsitem{
+                margin-bottom: 1rem;
+            }
+            .m-sd-bdc{
+                border: 3px solid #ccc;
+                padding: 2rem;
+            }
+            .m-slide-logo{
+                display: inline-block;
+                margin-bottom: 2rem;
+            }
+            .m-slide-lstc{
+
+                display: inline-block;
+                vertical-align: top;
+                margin-left: 4rem;
+            }
+            /* 颜色字型美化 */
+            .u-sd-hot_tt{
+                color: rgb(234, 30, 60);
+                border-bottom: 2px solid rgba(0,0,0,0.5);
+            }
+            /* 边框美化 */
+            .u-slide-logoimg{
+                border: 10px solid #fff;
+                border-radius: 50%;
+                padding-right: 1rem;
+                margin-right: 1rem;
+            }
+            .u-mnc-bd-ct,.u-sd-hot_lsitem{
+                border-left: 5px solid #27ae60;
+                background-color: #ecf0f1;
+                line-height: 1.5;
+                padding: 1rem;
+            }
+            .u-sd-hot_lsitem{
+                border-left-color: tomato;
+                text-indent: 1rem;
+            }
+            /* 背景图片 */
+            .u-hd-tt{
+                display: block;
+                width: 262px;
+                line-height: 120px;
+                text-indent: -9999999px;
+                background: url("images/logo+viewdegree.png") no-repeat 0 50%;
+            }
+            /* 列表美化 */
+            .u-slide-lsitem,.u-fdlk-bd-lsitem{
+                color: #fff;
+                list-style: none;
+                padding: 15px;
+                margin: 5px 0;
+                border-radius: 3px;
+                text-indent: 2rem;
+            }
+            .u-slide-lsitem{
+                background: rgba(197, 67, 79) url("./images/icon+right_20.png") no-repeat 10px 50%;
+            }
+            .u-fdlk-bd-lsitem{
+                background: rgba(197, 67, 79) url("./images/icon+link_20.png") no-repeat 10px 50%;
+            }
+            .u-slide-lsitem:nth-child(2n){
+                background-color: rgba(231, 80, 93); 
+            }
+            .u-slide-lsitem:hover{
+                background-color: #000;
+            }
+            .m-fdlk-bdc{
+                width: 90%;
+                margin:20px auto 0;
+            }
+            .m-fdlk-bd,.u-fdlk-bd-lsitem{
+                display: inline-block;
+            }
+            .u-fdlk-tt{
+                float: left;
+            }
+        </style>
+    </head>
+    <body style="user-select: none;">
+        <!-- hd = header -->
+        <header class="g-hd">
+            <h1 class="m-hd-tt"><span class="u-hd-tt">视度博客</span></h1>
+            <nav class="m-hd-nav">
+                <ul class="m-hd-nav-lst">
+                    <li class="m-hd-nav-lsitem"><a href="">栏目1</a></li>
+                    <li class="m-hd-nav-lsitem"><a href="">栏目2</a></li>
+                    <li class="m-hd-nav-lsitem"><a href="">栏目3</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- mn = main -->
+        <main class="g-mn">
+            <section class="g-mnc">
+                <h2 class="u-mnc-tt">html板块</h2>
+                <div class="m-mnc-bdc">
+                    <article class="u-mnc-bd">
+                        <h3 class="u-mnc-bd-tt">第一篇html文章的标题</h3>
+                        <p class="u-mnc-bd-ct">第一篇html文章的内容</p>
+                    </article>
+                    <article class="u-mnc-bd">
+                        <h3 class="u-mnc-bd-tt">第二篇html文章</h3>
+                        <p class="u-mnc-bd-ct">第二篇html文章的内容</p>
+                    </article>
+                </div>
+            </section>
+            </section>
+        </main>
+        <!-- sd = side -->
+        <aside class="g-sd">
+            <div class="m-sd-bdc">
+                <h2 class="u-sd-hot_tt">热门文章</h2>
+                <div class="m-sd-hot_lstc">
+                    <ul class="m-sd-hot_lst">
+                        <li class="u-sd-hot_lsitem">ajax的运用</li>
+                        <li class="u-sd-hot_lsitem">js的隐式类型转换</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <section class="g-slide">
+            <div class="m-slide-bdc">
+                <div class="m-slide-logo">
+                    <img class="u-slide-logoimg" src="images/logo+html_256.png"  alt="html_logo" width="256" height="256">
+                </div>
+                <div class="m-slide-lstc">
+                    <h4 class="u-slide-lstt">html知识列表</h4>
+                    <ul class="m-slide-lst">
+                        <li class="u-slide-lsitem"><a href="">html的标签规则</a></li>
+                        <li class="u-slide-lsitem"><a href="">html的标签分类</a></li>
+                        <li class="u-slide-lsitem"><a href="">html的三大结构</a></li>
+                        <li class="u-slide-lsitem"><a href="">html的特性--稳定性</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-slide-bdc">
+                <div class="m-slide-logo">
+                    <img class="u-slide-logoimg" src="images/logo+css_256.png" alt="css_logo" width="256" height="256">
+                </div>
+                <div class="m-slide-lstc">
+                    <h4 class="u-slide-lstt">css知识列表</h4>
+                    <ul class="m-slide-lst">
+                        <li class="u-slide-lsitem"><a href="">css的语法规则</a></li>
+                        <li class="u-slide-lsitem"><a href="">css的属性分类</a></li>
+                        <li class="u-slide-lsitem"><a href="">css的三大结构</a></li>
+                        <li class="u-slide-lsitem"><a href="">css的特性--美化</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-slide-bdc">
+                <div class="m-slide-logo">
+                    <img class="u-slide-logoimg" src="images/logo+js_256.png" alt="javascript_logo" width="256" height="256">
+                </div>
+                <div class="m-slide-lstc">
+                    <h4 class="u-slide-lstt">javascript知识列表</h4>
+                    <ul class="m-slide-lst">
+                        <li class="u-slide-lsitem"><a href="">js的数据结构</a></li>
+                        <li class="u-slide-lsitem"><a href="">js的操作符</a></li>
+                        <li class="u-slide-lsitem"><a href="">js的隐式类型转换</a></li>
+                        <li class="u-slide-lsitem"><a href="">js的操作dom</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- ft = foot -->
+        <footer class="g-ft">
+            <p>版权所有</p>
+            <div class="m-fdlk-bdc">
+                <h4 class="u-fdlk-tt">友情链接</h4>
+                <div class="m-fdlk-bd">
+                    <ul class="m-fdlk-bd-lst">
+                        <li class="u-fdlk-bd-lsitem"><a href="">小兔的博客</a></li>
+                        <li class="u-fdlk-bd-lsitem"><a href="">小鸡的博客</a></li>
+                        <li class="u-fdlk-bd-lsitem"><a href="">小鸟的博客</a></li>
+                        <li class="u-fdlk-bd-lsitem"><a href="">小爱的博客</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
