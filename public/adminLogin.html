@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-02-26 20:27:43
- * @LastEditTime: 2020-02-26 20:48:05
+ * @LastEditTime: 2020-02-29 10:53:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  -->
@@ -138,8 +138,9 @@
 				<form class="signup-form" action="" method="post">
 					<input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
 					<input type="text" class="input" id="user_name" autocomplete="off" placeholder="Username">
-					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
-					<input type="submit" class="button" value="Sign Up">
+                    <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+                    <input type="password" class="input" id="user_repass" autocomplete="off" placeholder="RePassword">
+					<input type="submit" id="signBtn" class="button" value="Sign Up">
 				</form><!--.login-form-->
 				<div class="help-text">
 					<p>By signing up, you agree to our</p>
@@ -148,13 +149,13 @@
 			</div><!--.signup-tab-content-->
 
 			<div id="login-tab-content">
-				<form class="login-form" action="" method="post">
-					<input type="text" class="input" id="user_login" autocomplete="off" placeholder="Email or Username">
-					<input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+				<form class="login-form">
+					<input type="text" class="input" id="user_loginname" autocomplete="off" placeholder="Email or Username">
+					<input type="password" class="input" id="user_loginpass" autocomplete="off" placeholder="Password">
 					<input type="checkbox" class="checkbox" id="remember_me">
 					<label for="remember_me">Remember me</label>
 
-					<input type="submit" class="button" value="Login">
+					<input type="submit" class="button" id="submitBtn" value="Login">
 				</form><!--.login-form-->
 				<div class="help-text">
 					<p><a href="#">Forget your password?</a></p>
@@ -162,11 +163,16 @@
 			</div><!--.login-tab-content-->
 		</div><!--.tabs-content-->
     </div><!--.form-wrap-->
-    <script src="./js/jquery.min.js"></script>
+    <script src="/asset/lib/js/jquery.min.js"></script>
     <script>
         jQuery(document).ready(function($) {
-            tab = $('.tabs h3 a');
-
+            var tab = $('.tabs h3 a');
+            var user_email = $('#user_email')[0]
+            var user_name = $('#user_name')[0]
+            var user_pass = $('#user_pass')[0]
+            var user_repass = $('#user_repass')[0]
+            var user_loginname = $('#user_loginname')[0]
+            var user_loginpass = $('#user_loginpass')[0]
             tab.on('click', function(event) {
                 event.preventDefault();
                 tab.removeClass('active');
@@ -176,6 +182,29 @@
                 $('div[id$="tab-content"]').removeClass('active');
                 $(tab_content).addClass('active');
             });
+            
+            $("#signBtn").on("click",function(event){
+                data = {
+                    username: user_name.value,
+                    password: user_pass.value,
+                    repassword:user_repass.value
+                }
+                event.preventDefault();
+                $.ajax({
+                    url: "/api/register",
+                    data,
+                    type: "post",
+                    dataType: "json",
+                    success: function(data) {
+                        // data = jQuery.parseJSON(data);  //dataType指明了返回数据为json类型，故不需要再反序列化\
+                        console.log(data)
+                    }
+                })
+            })
+            $("#submitBtn").click(function(event){
+                event.preventDefault();
+                console.log('2');
+            })
         });
     </script>
 </body>
